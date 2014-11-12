@@ -36,7 +36,7 @@ app.post('/hohoho', function (req, res) {
     var body = req.body;
     var i;
     var santas = [];
-    var errors = [];
+    var errors = 0;
     var email;
     for (i = 0; i < body.name.length; i++) {
         email = body.email[i];
@@ -45,9 +45,10 @@ app.post('/hohoho', function (req, res) {
                 name: body.name[i].trim(),
                 email: email.trim()
             })
-        } else {
-            errors.push(i);
         }
+//        else {
+//            errors.push(i);
+//        }
     }
 
     var mailTpl = _.template(body['mail-template']);
@@ -78,6 +79,7 @@ app.post('/hohoho', function (req, res) {
         transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
                 console.log(error);
+                errors++;
             } else {
                 console.log('Message sent: ' + info.response);
             }
@@ -95,7 +97,7 @@ app.post('/hohoho', function (req, res) {
 
     // redirect to success / error
 
-    res.end('TO DO');
+    res.end('Tried to send ' + santas.length + ' mails, ' + errors + ' failed');
 });
 
 app.use('/static', express.static(__dirname + '/public'));

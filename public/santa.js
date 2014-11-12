@@ -21,12 +21,12 @@ $(function () {
     });
 
     $submit.click(function (ev) {
-        $.post({
+        $.ajax({
             type: 'POST',
             url: '/hohoho',
             data: $('#form-names').serialize(),
-            success: function () {
-                alert('Sent!');
+            success: function (data) {
+                alert('Sent! ' + data);
             },
             error: function () {
                 alert('Something went wrong, check console');
