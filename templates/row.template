@@ -1,0 +1,11 @@
+<tr>
+    <td>
+        <input class="name" name="name[]" placeholder="Name">
+    </td>
+    <td>
+        <input class="email" name="email[]" placeholder="e-mail">
+    </td>
+    <td>
+        <button type="button" class="remove">x</button>
+    </td>
+</tr>

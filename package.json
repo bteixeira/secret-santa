@@ -1,0 +1,13 @@
+{
+    "name": "secret-santa",
+    "version": "0.0.1",
+    "description": "Secret Santa!",
+    "author": "Bruno Teixeira <bteixeira666@gmail.com>",
+    "dependencies": {
+        "express": "*",
+        "underscore": "*",
+        "body-parser": "*",
+        "nodemailer": "*"
+    },
+    "license": "MIT"
+}

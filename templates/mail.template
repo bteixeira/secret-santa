@@ -1,0 +1,7 @@
+Hello <%= my.name %>!
+
+This year you will be the Secret Santa for <%= their.name %> (<%= their.email %>)!
+
+Merry Christmas!
+
+Ho ho ho

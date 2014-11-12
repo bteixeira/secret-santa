@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secret Santa</title>
+    <link rel="stylesheet" href="/static/santa.css">
+</head>
+<body>
+
+<form id="form-names">
+
+    <h2>
+        1) List your friends
+    </h2>
+
+    <table id="table-names">
+        <tbody>
+            <!-- Here be content -->
+        </tbody>
+    </table>
+
+    <button id="button-add" type="button">+</button>
+
+    <h2>
+        2) Write your e-mail template
+    </h2>
+
+    <div class="help">
+        Allowed replacements:
+        <ul>
+            <li>&lt;%= my.name %&gt;</li>
+            <li>&lt;%= my.email %&gt;</li>
+            <li>&lt;%= their.name %&gt;</li>
+            <li>&lt;%= their.email %&gt;</li>
+        </ul>
+    </div>
+
+    Subject:
+    <input name="subject" placeholder="Subject" value="Secret Santa">
+    <textarea name="mail-template" rows="20"><%= mailTemplate %></textarea>
+
+    <h2>
+        3) Go!
+    </h2>
+        <button id="button-submit" type="submit">Send</button>
+</form>
+
+</body>
+
+<script type="template" id="template-row">
+    <%= rowTemplate %>
+</script>
+
+<script src="/static/jquery-2.1.1.js"></script>
+<script src="/static/underscore.js"></script>
+<script src="/static/santa.js"></script>
+
+</html>
